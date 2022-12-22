@@ -1,0 +1,21 @@
+name: Code Coverage
+
+on: [push, pull_request]
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12.x
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests with coverage
+        run: npm test -- --coverage
+      - name: Check coverage
+        run: |
+          coverage=$(cat coverage/lcov.info | grep -Po '^SF:.*' | awk -F ':' '{s+=$2} END {print s}')
+          if (( $(echo "$coverage < 80" | bc -l) )); then exit 1; fi
