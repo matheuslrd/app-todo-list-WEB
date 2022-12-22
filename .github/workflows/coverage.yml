@@ -17,5 +17,7 @@ jobs:
         run: npm run test:coverage
       - name: Check coverage
         run: |
-          coverage=$(cat coverage/lcov.info | grep -Po '^SF:.*' | awk -F ':' '{s+=$2} END {print s}')
-          if (( $(echo "$coverage < 60" | bc -l) )); then exit 1; fi
+          coverage=$(cat coverage/lcov.info | grep -o "SF.*" | awk -F ':' '{ total += $2 } END { print total }')
+          if (( $(echo "$coverage < 60" | bc -l) )); then
+            exit 1
+          fi
