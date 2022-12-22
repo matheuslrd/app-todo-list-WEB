@@ -6,19 +6,8 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v1
+      - uses: artiomtr/jest-coverage-report-action@v2
         with:
-          node-version: 'lts/*'
-      - name: Install dependencies
-      - run: npm install
-      - name: Run tests
-      - run: npm run test:coverage
-
-      - name: Check coverage
-        uses: inzephirum/gha-test-coverage-check
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          min_threshold: '80'
-          report_file_path: './coverage/lcov.info'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          threshold: 80
