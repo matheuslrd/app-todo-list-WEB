@@ -22,7 +22,7 @@ export default function Input(props: InputProps) {
     <>
       <input ref={inputRef} id={fieldName} defaultValue={defaultValue} {...props} />
 
-      {error && <span>{error}</span>}
+      {error && <span data-testid={`${props.name}-error`}>{error}</span>}
     </>
   );
 }

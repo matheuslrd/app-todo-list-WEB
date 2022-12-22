@@ -12,19 +12,21 @@ export default function Login() {
   ) => {
     console.log(data);
     if (!data.login || !data.password) {
-      formRef.current.setFieldError('login', 'Login is required');
-    }
+      formRef.current?.setFieldError('login', 'erro');
 
-    reset();
+      reset();
+    }
   };
 
   return (
     <div>
       <h1>Login</h1>
       <Form onSubmit={handleSubmit} ref={formRef}>
-        <Input type="text" name="login" />
-        <Input type="password" name="password" />
-        <button type="submit">Logar</button>
+        <Input type="text" name="login" data-testid="login" />
+        <Input type="password" name="password" data-testid="password" />
+        <button type="submit" data-testid="login-btn">
+          Logar
+        </button>
       </Form>
     </div>
   );
