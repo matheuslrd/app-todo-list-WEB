@@ -7,17 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+
+      - run: npm install
+      - run: npm run coverage
+
+      - name: check
+        uses: inzephirum/gha-test-coverage-check
         with:
-          node-version: 'lts/*'
-      - name: Install dependencies
-        run: npm install
-      - name: Run tests with coverage
-        run: npm run test:coverage
-      - name: Check coverage
-        run: |
-          coverage=$(cat coverage/lcov.info | grep -o "SF.*" | awk -F ':' '{ total += $2 } END { print total }')
-          if (( $(echo "$coverage < 60" | bc -l) )); then
-            exit 1
-          fi
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          min_threshold: '80'
+          report_file_path: './coverage/lcov.info'
