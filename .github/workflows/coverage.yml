@@ -18,4 +18,4 @@ jobs:
       - name: Check coverage
         run: |
           coverage=$(cat coverage/lcov.info | grep -Po '^SF:.*' | awk -F ':' '{s+=$2} END {print s}')
-          if (( $(echo "$coverage < 80" | bc -l) )); then exit 1; fi
+          if (( $(echo "$coverage < 60" | bc -l) )); then exit 1; fi
