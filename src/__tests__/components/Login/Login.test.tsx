@@ -3,10 +3,11 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Login from '../../../components/pages/Login';
 import userEvent from '@testing-library/user-event';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('Login.tsx', () => {
   it('Should login successfully with correct info', async () => {
-    render(<Login />);
+    render(<Login />, {wrapper: BrowserRouter});
 
     const loginInput = screen.getByTestId('login');
     const passwordInput = screen.getByTestId('password');
@@ -25,7 +26,7 @@ describe('Login.tsx', () => {
   });
 
   it('Should fail if has invalid fields', async () => {
-    render(<Login />);
+    render(<Login />, { wrapper: BrowserRouter });
 
     const loginInput = screen.getByTestId('login');
     const passwordInput = screen.getByTestId('password');
