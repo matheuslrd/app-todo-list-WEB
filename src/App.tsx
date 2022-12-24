@@ -1,5 +1,5 @@
 import Login from '@/components/pages/Login';
-import './styles/style.scss';
+import './sass/main.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
