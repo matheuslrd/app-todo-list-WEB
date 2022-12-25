@@ -28,12 +28,17 @@
 
   .label-login {
     position: relative;
-
+    
     svg {
       position: absolute;
       top: 50%;
       left: 1rem;
       transform: translateY(-50%);
+      color: $container;
+      transition: color 0.2s ease 0s;
+    }
+
+    &:focus-within svg {
       color: $secondary;
     }
   }
