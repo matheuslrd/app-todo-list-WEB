@@ -4,8 +4,8 @@ import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import { Link } from 'react-router-dom';
 import { MdEmail } from 'react-icons/md';
-import { FaLock, FaApple, FaFacebook } from 'react-icons/fa';
-import { FcGoogle } from 'react-icons/fc';
+import { FaLock } from 'react-icons/fa';
+import ThirdPartyAuth from './ThirdPartyAuth';
 
 export default function Login() {
   const formRef = useRef<FormHandles>(null);
@@ -57,20 +57,7 @@ export default function Login() {
           </span>
         </Form>
         <hr className="separator" />
-        <div className="try-login-with">
-        <span className="try-login-with-text">Ou entre com</span>
-          <div className="sign-in-buttons">
-            <button className="icon-sigin google-icon">
-              <FcGoogle />
-            </button>
-            <button className="icon-sigin facebook-icon">
-              <FaFacebook />
-            </button>
-            <button className="icon-sigin apple-icon">
-              <FaApple />
-            </button>
-          </div>
-        </div>
+        <ThirdPartyAuth />
       </div>
     </div>
   );
