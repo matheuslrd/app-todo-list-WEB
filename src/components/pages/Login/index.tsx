@@ -3,6 +3,8 @@ import Input from '../../Input';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import { Link } from 'react-router-dom';
+import { MdEmail } from 'react-icons/md';
+import { FaLock } from 'react-icons/fa';
 
 export default function Login() {
   const formRef = useRef<FormHandles>(null);
@@ -29,6 +31,8 @@ export default function Login() {
             data-testid="login"
             className="input-login"
             placeholder="Login"
+            iconLeft={<MdEmail />}
+            labelClass="label-login"
           />
           <Input
             type="password"
@@ -36,9 +40,11 @@ export default function Login() {
             data-testid="password"
             className="input-login"
             placeholder="Senha"
+            iconLeft={<FaLock />}
+            labelClass="label-login"
           />
         </div>
-        <Link to="/recover-password">Esqueci minha senha</Link>
+        <Link to="/recovery-password">Esqueci minha senha</Link>
         <button type="submit" data-testid="login-btn" className="submit-login">
           Entrar
         </button>
@@ -47,7 +53,7 @@ export default function Login() {
         </span>
         <hr className="separator" />
         <div>
-          <span className='try-login-with'>Ou entre com</span>
+          <span className="try-login-with">Ou entre com</span>
           <button type="button">Google</button>
         </div>
       </Form>
