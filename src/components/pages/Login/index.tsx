@@ -5,6 +5,7 @@ import { FormHandles } from '@unform/core';
 import { Link } from 'react-router-dom';
 import { MdEmail } from 'react-icons/md';
 import { FaLock } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import ThirdPartyAuth from './ThirdPartyAuth';
 
 export default function Login() {
@@ -24,7 +25,11 @@ export default function Login() {
 
   return (
     <div className="login-page">
-      <div className="form-login">
+      <motion.div
+        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+        transition={{ duration: 0.4 }}
+        className="form-login"
+      >
         <Form onSubmit={handleSubmit} ref={formRef}>
           <div className="login-input-group">
             <Input
@@ -58,7 +63,7 @@ export default function Login() {
         </Form>
         <hr className="separator" />
         <ThirdPartyAuth />
-      </div>
+      </motion.div>
     </div>
   );
 }

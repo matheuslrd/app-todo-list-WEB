@@ -17,6 +17,7 @@
     padding: 4rem;
     width: 100%;
     max-width: 480px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
   }
 
   .login-input-group {
@@ -125,17 +126,14 @@
     place-items: center;
     transition: filter 0.2s;
     font-size: 1.8rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px;
 
     &:hover {
       filter: brightness(0.9);
     }
   }
 
-  .google-icon {
-    background: $white;
-  }
-
-  .apple-icon {
+  .google-icon, .apple-icon {
     background: $white;
   }
 
