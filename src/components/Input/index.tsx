@@ -21,10 +21,12 @@ export default function Input(props: InputProps) {
   }, [fieldName, registerField]);
 
   return (
-    <label htmlFor={fieldName} className={props.labelClass}>
-      {props.iconLeft}
-      <input ref={inputRef} id={fieldName} defaultValue={defaultValue} {...props} />
+    <>
+      <label htmlFor={fieldName} className={props.labelClass}>
+        {props.iconLeft}
+        <input ref={inputRef} id={fieldName} defaultValue={defaultValue} {...props} />
+      </label>
       {error && <span data-testid={`${props.name}-error`}>{error}</span>}
-    </label>
+    </>
   );
 }

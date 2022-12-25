@@ -53,6 +53,13 @@
     }
   }
 
+  .recovery-password {
+    text-align: right;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+
   .submit-login {
     background-color: $secondary;
     border-radius: 5px;
@@ -73,8 +80,9 @@
   }
 
   .register-link {
+    display: inline-block;
     text-align: center;
-    margin-top: 1.5rem;
+    margin-top: 1.4rem;
     color: $grey;
   }
 
@@ -83,7 +91,8 @@
     align-items: center;
     margin: 1.5rem 0;
 
-    &::before, &::after {
+    &::before,
+    &::after {
       content: '';
       flex: 1;
       border-bottom: 1px solid $secondary;
@@ -91,9 +100,47 @@
   }
 
   .try-login-with {
-    color: rgb(225, 225, 230);
-    font-size: 14px;
-    white-space: nowrap;
-    margin-right: 1.5rem;
+    display: flex;
+    align-items: center;
+
+    span {
+      color: $grey;
+      font-size: 14px;
+      white-space: nowrap;
+      margin-right: 1.5rem;
+    }
+  }
+
+  .sign-in-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .icon-sigin {
+    cursor: pointer;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 0.5rem;
+    display: grid;
+    place-items: center;
+    transition: filter 0.2s;
+    font-size: 1.8rem;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  .google-icon {
+    background: $white;
+  }
+
+  .apple-icon {
+    background: $white;
+  }
+
+  .facebook-icon {
+    background: #1A77F2;
+    color: white;
   }
 }
