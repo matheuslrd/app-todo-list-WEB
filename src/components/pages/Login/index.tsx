@@ -51,14 +51,14 @@ export default function Login() {
               labelClass="label-login"
             />
           </div>
-          <Link className="recovery-password" to="/recovery-password">
+          <Link className="recovery-password" to="/forgot">
             Esqueci minha senha
           </Link>
           <button type="submit" data-testid="login-btn" className="submit-login">
             Entrar
           </button>
           <span className="register-link">
-            Não tem uma conta? <Link to="/register">Registre-se</Link>
+            Não tem uma conta? <Link to="/singup">Registre-se</Link>
           </span>
         </Form>
         <hr className="separator" />
