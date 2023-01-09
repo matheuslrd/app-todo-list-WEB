@@ -5,8 +5,8 @@ import { FormHandles } from '@unform/core';
 import { Link } from 'react-router-dom';
 import { MdEmail } from 'react-icons/md';
 import { FaLock } from 'react-icons/fa';
-import { motion } from 'framer-motion';
 import ThirdPartyAuth from './ThirdPartyAuth';
+import MotionFromBottom from '../../animations/MotionFromBottom';
 
 export default function Login() {
   const formRef = useRef<FormHandles>(null);
@@ -25,11 +25,7 @@ export default function Login() {
 
   return (
     <div className="login-page">
-      <motion.div
-        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-        transition={{ duration: 0.4 }}
-        className="form-login"
-      >
+      <MotionFromBottom>
         <Form onSubmit={handleSubmit} ref={formRef}>
           <div className="login-input-group">
             <Input
@@ -63,7 +59,7 @@ export default function Login() {
         </Form>
         <hr className="separator" />
         <ThirdPartyAuth />
-      </motion.div>
+      </MotionFromBottom>
     </div>
   );
 }
