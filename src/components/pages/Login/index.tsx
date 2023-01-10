@@ -5,7 +5,7 @@ import { FormHandles } from '@unform/core';
 import { Link } from 'react-router-dom';
 import { MdEmail } from 'react-icons/md';
 import { FaLock } from 'react-icons/fa';
-import ThirdPartyAuth from './ThirdPartyAuth';
+import ThirdPartyAuth from './components/ThirdPartyAuth';
 import MotionFromBottom from '../../animations/MotionFromBottom';
 
 export default function Login() {
