@@ -34,8 +34,8 @@ export default function Login() {
               data-testid="login"
               className="input-login"
               placeholder="Login"
-              iconLeft={<MdEmail />}
-              labelClass="label-login"
+              iconleft={<MdEmail />}
+              labelclass="label-login"
             />
             <Input
               type="password"
@@ -43,8 +43,8 @@ export default function Login() {
               data-testid="password"
               className="input-login"
               placeholder="Senha"
-              iconLeft={<FaLock />}
-              labelClass="label-login"
+              iconleft={<FaLock />}
+              labelclass="label-login"
             />
           </div>
           <Link className="recovery-password" to="/forgot">

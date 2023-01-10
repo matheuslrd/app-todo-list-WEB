@@ -3,8 +3,8 @@ import React, { useEffect, useRef } from 'react';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
-  iconLeft?: React.ReactNode;
-  labelClass?: string;
+  iconleft?: React.ReactNode;
+  labelclass?: string;
 }
 
 export default function Input(props: InputProps) {
@@ -20,11 +20,22 @@ export default function Input(props: InputProps) {
     });
   }, [fieldName, registerField]);
 
+  const preventProps = {
+    ...props,
+    iconleft: null,
+    labelclass: null,
+  };
+
   return (
     <>
-      <label htmlFor={fieldName} className={props.labelClass}>
-        {props.iconLeft}
-        <input ref={inputRef} id={fieldName} defaultValue={defaultValue} {...props} />
+      <label htmlFor={fieldName} className={props.labelclass}>
+        {props.iconleft}
+        <input
+          ref={inputRef}
+          id={fieldName}
+          defaultValue={defaultValue}
+          {...preventProps}
+        />
       </label>
       {error && <span data-testid={`${props.name}-error`}>{error}</span>}
     </>
