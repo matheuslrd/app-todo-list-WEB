@@ -1,0 +1,149 @@
+.login-page {
+  align-items: center;
+  color: $white;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+  a {
+    width: fit-content;
+  }
+
+  .form-login {
+    background-color: $container;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+  }
+
+  .login-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .label-login {
+    position: relative;
+    
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+      color: $container;
+      transition: color 0.2s ease 0s;
+    }
+
+    &:focus-within svg {
+      color: $secondary;
+    }
+  }
+
+  .input-login {
+    width: 100%;
+    height: 3.125rem;
+    font-size: 1rem;
+    background: $background;
+    border: 2px solid $background;
+    color: rgb(255, 255, 255);
+    padding: 0px 1em 0px 2.65em;
+    border-radius: 5px;
+    transition: border 0.2s ease 0s;
+
+    &:focus {
+      border-color: $secondary;
+    }
+  }
+
+  .recovery-password {
+    text-align: right;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+
+  .submit-login {
+    background-color: $secondary;
+    border-radius: 5px;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    height: 3.125rem;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+    transition: filter 0.2s;
+    width: 100%;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  .register-link {
+    display: inline-block;
+    text-align: center;
+    margin-top: 1.4rem;
+    color: $grey;
+  }
+
+  .separator {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid $secondary;
+    }
+  }
+
+  .try-login-with {
+    display: flex;
+    align-items: center;
+
+    span {
+      color: $grey;
+      font-size: 14px;
+      white-space: nowrap;
+      margin-right: 1.5rem;
+    }
+  }
+
+  .sign-in-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .icon-sigin {
+    cursor: pointer;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 0.5rem;
+    display: grid;
+    place-items: center;
+    transition: filter 0.2s;
+    font-size: 1.8rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  .google-icon, .apple-icon {
+    background: $white;
+  }
+
+  .facebook-icon {
+    background: #1A77F2;
+    color: white;
+  }
+}

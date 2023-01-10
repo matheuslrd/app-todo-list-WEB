@@ -19,6 +19,7 @@
   },
   "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier", "testing-library"],
   "rules": {
+    "jsx-quotes": ["error", "prefer-double"],
     "semi": "error",
     "react-hooks/exhaustive-deps": "off",
     "react/jsx-filename-extension": "off",
